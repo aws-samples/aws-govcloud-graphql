@@ -1,0 +1,17 @@
+{
+  "name": "lambda-crud-dynamodb",
+  "version": "1.0.0",
+  "description": "Lambdas to do CRUD operations on DynamoDB",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/uuid": "*"
+  },
+  "dependencies": {
+    "@aws-sdk/lib-dynamodb": "^3.319.0",
+    "apollo-server-lambda": "^3.12.0",
+    "graphql": "^16.6.0",
+    "ulid": "^2.3.0"
+  }
+}
