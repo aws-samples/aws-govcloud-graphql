@@ -6,7 +6,7 @@ Important: this application uses various AWS services and there are costs associ
 
 ```bash
 .
-├── README.MD           <-- This instructions file
+├── README.MD           <-- Deployment Instructions file
 ├── 1-infra             <-- Project for building out the infrastructure shown in the architecture 
 ├── 2-mission-gen-ai    <-- Project creates an Amazon SageMaker endpoint which invokes a generative AI model for text generation
 ```
@@ -95,12 +95,12 @@ Note the following from the `Outputs` section of the deployment, as the value ma
 SagemakerendpointStack.MissionSMApiGatewayEndpoint<Random value> = https://<random value>.execute-api.us-gov-west-1.amazonaws.com/prod/
 ```
 
-### 3. Follow the blog for the rest of the setup 
+### 3. Refer to the blog for the rest of the setup 
 
 ## Cleanup
 
 1. Manually delete any objects in the S3 buckets created in step 1 of the installation instructions.
-2. If the Generative AI stack is also deployed then, run the following commands in the base directory
+2. If the Generative AI stack is also deployed,please run the following commands in the base directory
 ```sh
 cd ./2-mission-gen-ai
 cdk destroy
