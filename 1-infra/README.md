@@ -8,4 +8,4 @@
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
 
-Please navigate to [README](https://github.com/aws-samples/aws-govcloud-graphql/blob/main/README.md)for further instructions
+Please navigate to [README](https://github.com/aws-samples/aws-govcloud-graphql/blob/main/README.md) for further instructions
