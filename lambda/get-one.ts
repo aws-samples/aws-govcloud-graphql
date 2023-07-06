@@ -9,7 +9,6 @@ const PRIMARY_KEY = process.env.PRIMARY_KEY || '';
 
 const client = new DynamoDBClient({});
 
-
 export const getMission = async(missionId: any, tableName: string) : Promise<any> => {
   if (!missionId) {
     return { statusCode: 400, body: `Error: You are missing the path parameter id` };

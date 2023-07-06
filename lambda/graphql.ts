@@ -4,7 +4,7 @@
 import { getMission } from './get-one';
 import { createMissionFn } from './create-mission';
 
-const { ApolloServer, gql } = require("apollo-server-lambda");
+const { ApolloServer, gql } = require("@apollo/server");
 
 const TABLE_NAME = process.env.TABLE_NAME || '';
 
@@ -51,8 +51,8 @@ const server = new ApolloServer({
   resolvers,
   // If you'd like to have GraphQL Playground and introspection enabled in production,
   // the `playground` and `introspection` options must be set explicitly to `true`.
-  playground: false,
-  introspection: false,
+  playground: true,
+  introspection: true,
 });
 
 exports.handler = server.createHandler();

@@ -5,7 +5,7 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { Table, AttributeType, BillingMode, ProjectionType, TableEncryption } 
   from 'aws-cdk-lib/aws-dynamodb';
-import { OAuthScope, UserPool, UserPoolClient,  
+import { OAuthScope, UserPool, IUserPool,  
   VerificationEmailStyle, ResourceServerScope } 
   from 'aws-cdk-lib/aws-cognito';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
@@ -59,7 +59,7 @@ class BaseResources extends cdk.NestedStack {
   constructor(scope: Construct, id: string, props?: cdk.NestedStackProps) {
     super(scope, id, props)
     
-    const config = require('../../config.json')
+    const config = require('../config.json')
     const tableName = config.Database.TableName;
     
      this.missionsTable = new Table(this, tableName, { 
@@ -103,7 +103,7 @@ class BaseResources extends cdk.NestedStack {
           '@aws-sdk/lib-dynamodb', // Use the '@aws-sdk/lib-dynamodb' available in the Lambda runtime
         ],
       },
-      depsLockFilePath: join(__dirname, '../lambdas', 'package-lock.json'),
+      depsLockFilePath: join(__dirname, '../lambda', 'package-lock.json'),
       environment: {
         TABLE_NAME: this.missionsTable.tableName,
       },
@@ -112,7 +112,7 @@ class BaseResources extends cdk.NestedStack {
     
     //  Service hosted by an Apollo server running on AWS Lambda
     this.apolloServer = new lambda.NodejsFunction(this, `ApolloServer`, {
-      entry: join(__dirname, '../lambdas/graphql.ts'),
+      entry: join(__dirname, '../lambda/graphql.ts'),
       timeout: cdk.Duration.seconds(30),
       tracing: Tracing.ACTIVE,
       runtime: Runtime.NODEJS_16_X,
@@ -137,6 +137,11 @@ class BaseResources extends cdk.NestedStack {
     });
   }
 }
+
+interface UserPoolStackProps extends cdk.StackProps {
+  UserPool: IUserPool;
+}
+export default UserPoolStackProps;
 
 interface PersonnelResourcesProps extends cdk.NestedStackProps {
   userPool: UserPool

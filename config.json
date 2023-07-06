@@ -1,9 +1,11 @@
 {
+    "CodeCommit": {
+        "RepoName": "<CODECOMMIT-REPO>"
+    },
     "Database": {
         "TableName": "missions"
     },
     "Cognito" : {
-        "UserPoolArn": "<Congito User Pool Arn>",
         "AdminScope": "adminusers/*"
     },
     "GenAIModel" : {
