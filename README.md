@@ -49,7 +49,7 @@ admin-apigw-endpoint-url	https://<random value>.execute-api.us-gov-west-1.amazon
 
 ### 2. Configuring and deploying the Generative AI stack
 
-Note: This solution assumes that the Generative AI model is previously provided by data scientists, and the ML model training and tuning is outside the scope of this solution. 
+Note: This solution assumes that the Generative AI model is previously provided by data scientists, and the ML model training and tuning is outside the scope of this solution. You may use the following [workshop](https://github.com/aws-samples/hugging-face-workshop), as a reference on how to deploy text generation models on Amazon SageMaker.
 
 1. create S3 Bucket, and upload *model.tar.gz* into the S3 Bucket. Note the bucket name, as that would be needed in the next step
 
