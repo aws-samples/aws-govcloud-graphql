@@ -22,7 +22,7 @@
   "dependencies": {
     "@aws-solutions-constructs/aws-wafwebacl-apigateway": "^2.39.0",
     "apollo-server-lambda": "^3.12.0",
-    "aws-cdk-lib": "2.84.0",
+    "aws-cdk-lib": "2.189.0",
     "constructs": "^10.0.0",
     "graphql": "^16.6.0",
     "source-map-support": "^0.5.21",
